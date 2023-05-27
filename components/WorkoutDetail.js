@@ -29,7 +29,7 @@ const WorkoutDetail = ({
             workoutData.isCompleted ? "text-green-600" : "text-yellow-600"
           } font-bold`}
         >
-          {workoutData.isCompleted ? "Completed" : "It has to be done"}
+          {workoutData.isCompleted ? "Completed" : "Incomplete"}
         </h1>
       </div>
     </>
