@@ -1,4 +1,4 @@
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineDelete } from "react-icons/ai";
 const WorkoutDetail = ({
   workoutData,
   onUpdateProgress,
@@ -11,12 +11,13 @@ const WorkoutDetail = ({
         className="w-full cursor-pointer h-auto sm:w-auto shadow-sm bg-black p-12 m-5 text-gray-400  rounded-xl  md:max-w-2xl hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105"
       >
         <div className="absolute top-5 right-5">
-          <AiOutlineCloseCircle
+          <AiOutlineDelete
             onClick={(e) => {
               e.stopPropagation();
               deleteHandlerFunc();
             }}
             size={"32px"}
+            color="red"
           />
         </div>
         <h1 className="text-2xl sm:text-6xl capitalize font-bold">
