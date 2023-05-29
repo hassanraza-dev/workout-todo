@@ -78,9 +78,9 @@ const Home = () => {
       <div className="flex justify-center flex-wrap mt-5">
         {(searchKeyword ? filteredWorkouts : allWorkouts).map(
           ({ title, reps, load, isCompleted, _id }) => {
-            console.log(_id, "_id");
             return (
               <WorkoutDetail
+                key={_id}
                 workoutData={{ title, reps, load, isCompleted }}
                 onUpdateProgress={() => updateHandler(_id)}
                 deleteHandlerFunc={() => deleteHandler(_id)}
