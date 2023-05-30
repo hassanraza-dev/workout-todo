@@ -1,11 +1,15 @@
+import { Provider } from "react-redux";
 import Navbar from "../components/Navbar";
 import "../styles/globals.css";
+import store from "../store/store";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Navbar />
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

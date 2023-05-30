@@ -8,11 +8,14 @@ import WorkoutDetail from "../components/WorkoutDetail";
 import Link from "next/link";
 import PlusButton from "../components/PlusButton";
 import ModalForm from "../components/ModalForm";
+import { useDispatch } from "react-redux";
+import { add } from "../store/workoutSlice";
 
 const Home = () => {
   const [allWorkouts, setAllWorkouts] = useState([]);
   const [filteredWorkouts, setFilteredWorkouts] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getWorkouts();
@@ -22,6 +25,7 @@ const Home = () => {
     fetchAllWorkouts()
       .then((res) => {
         setAllWorkouts(res);
+        dispatch(add(res));
       })
       .catch((err) => {
         console.log(err);
