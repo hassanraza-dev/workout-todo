@@ -5,8 +5,6 @@ import {
   updateWorkout,
 } from "../network/network";
 import WorkoutDetail from "../components/WorkoutDetail";
-import Link from "next/link";
-import PlusButton from "../components/PlusButton";
 import ModalForm from "../components/ModalForm";
 import { useDispatch } from "react-redux";
 import { add } from "../store/workoutSlice";
@@ -99,3 +97,23 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getServerSideProps({ req }) {
+  // does not allow access to page if not logged in
+  let token = req.headers.cookie.replace(
+    /(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/,
+    "$1"
+  );
+  if (!token) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: true,
+      },
+    };
+  }
+
+  return {
+    props: { data: "token" },
+  };
+}

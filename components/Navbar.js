@@ -4,7 +4,7 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className="flex w-full items-center justify-between flex-wrap bg-black">
-      <div className="flex items-center flex-shrink-0 text-white ml-6">
+      <div className="flex items-center flex-shrink-0 text-white">
         <Link href="/">
           <Image
             src="https://thumbs.dreamstime.com/b/white-dumbbell-gym-logo-black-background-workout-sign-vector-template-172909186.jpg"
