@@ -24,3 +24,8 @@ export const login = async (credentials) => {
   const response = await axiosInstance.post(`/user/login`, credentials);
   return response.data;
 };
+
+export const signup = async (credentials) => {
+  const response = await axiosInstance.post(`/user/signup`, credentials);
+  return response.data;
+};
